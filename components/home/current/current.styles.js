@@ -30,14 +30,23 @@ const styles = StyleSheet.create({
     padding: SIZES.small,
     textAlign: 'center',
     color: COLORS.primary,
+    margin: SIZES.medium,
   },
 
   searchBtn: {
     backgroundColor: COLORS.primary,
+    width: 50,
+    height: '70%',
+    backgroundColor: 'blue',
+    borderRadius: SIZES.small,
+    justifyContent: 'center',
+    alignItems: 'center',
   },
 
   searchBtnImg: {
-
+    width: '50%',
+    height: '50%',
+    tintColor: 'white',
   },
 });
 

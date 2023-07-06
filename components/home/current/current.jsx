@@ -15,17 +15,18 @@ import useFetch from '../../../hooks/useFetch';
 const Current = () => {
   const [searchValue, setsearchValue] = useState('');
   const [location, setlocation] = useState('Milton, ON');
-  const {datas, isLoading, error} = useFetch(location, 'metric');
+  // const {datas, isLoading, error} = useFetch(location, 'metric');
 
   return (
 
     <View style={styles.container}>
-      <View style={{alignItems: 'center'}}>
+      <View style={{
+        alignItems: 'center', flexDirection: 'row', justifyContent: 'center',
+      }}>
         <TextInput
           style={styles.textInput}
           onChangeText={(value) => {
             setsearchValue(value);
-            console.log(searchValue);
           }}
           placeholder='City, Prov ex: Milton, ON'
           placeholderTextColor={COLORS.primary}
@@ -34,7 +35,10 @@ const Current = () => {
 
         <TouchableOpacity
           style={styles.searchBtn}
-          onPress={() => {}}
+          onPress={() => {
+            setlocation(searchValue);
+            console.log(location);
+          }}
         >
           <Image
             source={search}
@@ -44,19 +48,19 @@ const Current = () => {
         </TouchableOpacity>
       </View>
       <View>
-        {
-                isLoading ? (
-                    <ActivityIndicator />
-                ) : error ? (
-                    <Text>Something went wrong</Text>
-                ) : (
-                    <View>
-                      <Text style={styles.locationText}>{location}</Text>
-                      <Text style={styles.tempText}>{
-                        `${''}°`
-                      }</Text>
-                    </View>
-                )
+        {//
+          // isLoading ? (
+          // <ActivityIndicator />
+          // ) : error ? (
+          // <Text>Something went wrong</Text>
+          // ) : (
+          //  <View>
+          //   <Text style={styles.locationText}>{location}</Text>
+          //    <Text style={styles.tempText}>{
+          //     `${datas.currentConditions.temp}°`
+          //  }</Text>
+          // </View>
+          //  )
         }
       </View>
     </View>
